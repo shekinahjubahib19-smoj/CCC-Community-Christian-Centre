@@ -140,3 +140,34 @@ nav { width: 100%; margin: 0; padding: 0; }
 .parent > a:hover, .parent > div:hover { color: #9ca3af; }
 .parent > a:first-child, .parent > div:first-child { padding-left: 0; }
 .parent > a:last-child, .parent > div:last-child { padding-right: 10px; }
+
+/* ==========================
+   Footer
+   ========================== */
+.site-footer {
+	background: rgba(65, 64, 64, 0.85);
+	color: #fff;
+	padding: 2rem 1rem;
+	text-align: center;
+}
+.site-footer .footer-inner { max-width: 1100px; margin: 0 auto; }
+.footer-tagline { font-weight: 700; font-size: 1.125rem; margin: 0 0 0.35rem; }
+.footer-thanks { margin: 0 0 1rem; color: #d1d5db; }
+.footer-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.footer-action {
+	display: inline-block;
+	padding: 0.6rem 1rem;
+	border: 1px solid rgba(255,255,255,0.9);
+	color: #fff;
+	text-decoration: none;
+	background: rgba(255,255,255,0.03);
+	border-radius: 6px;
+	transition: background-color 150ms ease, color 150ms ease, transform 120ms ease;
+}
+.footer-action:hover { background: #fff; color: #111827; transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+	.footer-tagline { font-size: 1rem; }
+	.footer-actions { gap: 0.6rem; }
+	.footer-action { padding: 0.5rem 0.9rem; }
+}
