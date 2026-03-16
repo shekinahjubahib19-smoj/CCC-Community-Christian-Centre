@@ -1,0 +1,142 @@
+/* ==========================
+   Reset & Base
+   ========================== */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Page transition (fade) */
+body.page-transition { transition: opacity 350ms ease-in-out; }
+body.page-hidden { opacity: 0; }
+
+/* Utility fallback in case Tailwind is not loaded */
+.uppercase { text-transform: uppercase; }
+
+/* ==========================
+   Layout helpers
+   ========================== */
+main { padding-top: 50px; /* reserve space for fixed header */ }
+
+/* ==========================
+   Hero / Intro section
+   ========================== */
+.hero-section {
+	position: relative;
+	overflow: hidden;
+	margin-top: -50px; /* bring hero under the fixed header */
+	padding-top: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hero-section::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0.35);
+	pointer-events: none;
+}
+.hero-section > div { position: relative; z-index: 2; transform: translateY(-25vh); }
+@media (max-width: 640px) { .hero-section > div { transform: translateY(-4vh); } }
+
+.hero-section h1, .hero-section .hero-title { text-transform: uppercase; }
+.hero-section h1 {
+	color: #f8f9fa;
+	font-size: clamp(0rem, 5vw, 7rem);
+	line-height: 1.02;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* ==========================
+   Hero chips (call-to-actions)
+   - Use `hero-chips` as a single container
+   - Use `hero-chip` for each button/anchor
+   ========================== */
+.hero-chips {
+	position: absolute;
+	left: 50%;
+	top: 200%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	z-index: 3;
+}
+
+.hero-chips .hero-chip {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	color: #fff;
+	border: 1px solid rgba(255,255,255,0.95);
+	background: rgba(255,255,255,0.06);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	padding: 0.85rem 2rem;
+	border-radius: 2px;
+	white-space: nowrap;
+	min-width: 320px;
+	text-align: center;
+	font-size: 1.25rem;
+	cursor: pointer;
+	transition: background-color 180ms ease, color 180ms ease, transform 120ms ease;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+	text-decoration: none;
+}
+
+.hero-chips .hero-chip:hover {
+	background: #fff;
+	color: #111827;
+}
+
+@media (max-width: 640px) {
+	.hero-chips {
+		flex-direction: column;
+		top: 96%;
+		gap: 0.6rem;
+	}
+	.hero-chips .hero-chip { min-width: auto; width: auto; padding: 0.6rem 1.2rem; }
+}
+
+/* ==========================
+   Navigation / Header
+   ========================== */
+nav { width: 100%; margin: 0; padding: 0; }
+
+.parent {
+	display: flex;
+	height: 50px;
+	background: transparent;
+	width: 100%;
+	align-items: center;
+	padding: 0 12px;
+	box-sizing: border-box;
+	justify-content: flex-end;
+	gap: 30px;
+	transition: background-color 200ms ease, box-shadow 200ms ease;
+	position: fixed;
+	top: 0; left: 0; right: 0; z-index: 9999;
+}
+.parent.scrolled { background-color: #000; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+
+.parent > a, .parent > div {
+	color: #fff;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: auto;
+	justify-content: center;
+	white-space: nowrap;
+	font-weight: 700;
+	font-size: 16px;
+	transition: color 150ms ease-in-out;
+	cursor: pointer;
+	text-decoration: none;
+}
+.parent > a:hover, .parent > div:hover { color: #9ca3af; }
+.parent > a:first-child, .parent > div:first-child { padding-left: 0; }
+.parent > a:last-child, .parent > div:last-child { padding-right: 10px; }
