@@ -1,0 +1,10 @@
+# Node modules (for Tailwind)
+node_modules/
+
+# Local XAMPP/Environment configs
+.env
+config/db_local.php
+
+# OS generated files
+.DS_Store
+Thumbs.db
