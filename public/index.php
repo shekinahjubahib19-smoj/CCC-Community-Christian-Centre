@@ -23,6 +23,18 @@
         </div>
     </section>
 
+    <section class="py-20 text-center text-white testimonial-section" style="background-image: linear-gradient(90deg, rgba(8, 8, 8, 0.82) 0%, rgba(8, 8, 8, 0.5) 45%, rgba(8, 8, 8, 0.2) 75%, rgba(8, 8, 8, 0.06) 100%), url('../assets/images/homepage_10.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; display:flex; align-items:center;">
+        <div class="testimonial-inner max-w-5xl mx-auto px-4 w-full">
+            <div class="testimonial-grid">
+                <div class="testimonial-text">
+                    <h2 class="text-3xl font-bold text-white">A Testimony</h2>
+                    <p class="testimonial-paragraph mt-4">“I wasn't sure where I belonged until I walked into Community Christian Centre. The warmth, worship and true community I found here restored my hope. If you're looking for a place to belong, come as you are — you'll find family and purpose.”</p>
+                </div>
+                <div class="testimonial-media" aria-hidden="true"></div>
+            </div>
+        </div>
+    </section>
+
     </main>
 
 <?php include('../components/footer.php'); ?>

@@ -13,9 +13,17 @@
 <body class="bg-gray-50 text-gray-900 page-transition page-hidden">
 
 <div class="parent" id="site-header">
+    <a href="index.php" class="logo">
+        <img src="../assets/images/ccc.png" alt="CCC - Community Christian Centre logo" class="logo-img">
+    </a>
     <a href="index.php" class="home">Home</a>
     <a href="about.php" class="about">About</a>
     <a href="ministries.php" class="ministries">Ministries</a>
+    <a href="departments.php" class="departments">Departments</a>
+    <a href="programs.php" class="programs">Programs</a>
+    <a href="life-groups.php" class="life-groups">Life Groups</a>
+    <a href="location.php" class="location">Location</a>
+    <a href="online.php" class="online">Online</a>
     <a href="contact.php" class="prayer-request">Prayer Request</a>
 </div>
 
