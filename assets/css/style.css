@@ -257,6 +257,297 @@ nav {
   padding-right: 10px;
 }
 
+/* ------------------
+   About dropdown (hover)
+   ------------------ */
+.about-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Keep the About link visually identical to other header links */
+.parent .about {
+  color: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 150ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+.about-container:hover > .about {
+  color: #9ca3af; /* match other header hover color */
+}
+.about-dropdown {
+  position: absolute;
+  top: calc(
+    100% - 6px
+  ); /* slightly overlap so small cursor gaps don't hide the menu */
+  left: 0;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.35rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms;
+  z-index: 99999;
+}
+.about-container:hover .about-dropdown,
+.about-container:focus-within .about-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* invisible hover-tolerance area below the About link to keep dropdown open while moving cursor */
+.about-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 14px;
+}
+
+/* Ministries dropdown - same visual treatment as About */
+.ministries-container {
+  position: relative;
+  display: inline-block;
+}
+.ministries-dropdown {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 0;
+  min-width: 240px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.35rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms;
+  z-index: 99999;
+}
+.ministries-container:hover .ministries-dropdown,
+.ministries-container:focus-within .ministries-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.ministries-option {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.ministries-option + .ministries-option {
+  margin-top: 0.25rem;
+}
+.ministries-option:hover {
+  background: #6b7280;
+  color: #fff;
+}
+
+/* keep the Ministries link styled like other header links */
+.parent .ministries {
+  color: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 150ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+.ministries-container:hover > .ministries {
+  color: #9ca3af;
+}
+/* Departments dropdown - same visual treatment as About/Ministries */
+.departments-container {
+  position: relative;
+  display: inline-block;
+}
+.departments-dropdown {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 0;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.35rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms;
+  z-index: 99999;
+}
+.departments-container:hover .departments-dropdown,
+.departments-container:focus-within .departments-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.departments-option {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.departments-option + .departments-option {
+  margin-top: 0.25rem;
+}
+.departments-option:hover {
+  background: #6b7280;
+  color: #fff;
+}
+
+/* keep the Departments link styled like other header links */
+.parent .departments {
+  color: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 150ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+.departments-container:hover > .departments {
+  color: #9ca3af;
+}
+.programs-container {
+  position: relative;
+  display: inline-block;
+}
+.programs-dropdown {
+  position: absolute;
+  top: calc(100% - 6px);
+  left: 0;
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 0.35rem 0.35rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms;
+  z-index: 99999;
+}
+.programs-container:hover .programs-dropdown,
+.programs-container:focus-within .programs-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.programs-option {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.programs-option + .programs-option {
+  margin-top: 0.25rem;
+}
+.programs-option:hover {
+  background: #6b7280;
+  color: #fff;
+}
+
+/* keep the Programs link styled like other header links */
+.parent .programs {
+  color: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 150ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+.programs-container:hover > .programs {
+  color: #9ca3af;
+}
+.about-option {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.about-option + .about-option {
+  margin-top: 0.25rem;
+}
+.about-option:hover {
+  background: #6b7280; /* gray on hover */
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .about-dropdown {
+    left: 0;
+    right: auto;
+    min-width: 180px;
+  }
+}
+
 .site-footer {
   background: transparent;
   color: #fff;
