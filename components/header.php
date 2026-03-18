@@ -17,10 +17,50 @@
         <img src="../assets/images/ccc.png" alt="CCC - Community Christian Centre logo" class="logo-img">
     </a>
     <a href="index.php" class="home">Home</a>
-    <a href="about.php" class="about">About</a>
-    <a href="ministries.php" class="ministries">Ministries</a>
-    <a href="departments.php" class="departments">Departments</a>
-    <a href="programs.php" class="programs">Programs</a>
+    <div class="about-container">
+        <a href="about.php" class="about">About</a>
+        <div class="about-dropdown" role="menu" aria-hidden="true">
+            <a class="about-option" href="about.php#church">About Church</a>
+            <a class="about-option" href="about.php#senior-pastors">About Senior Pastors</a>
+            <a class="about-option" href="about.php#pastors">About Pastors</a>
+            <a class="about-option" href="contact.php">About Contacts</a>
+            <a class="about-option" href="location.php">About Location</a>
+        </div>
+    </div>
+    <div class="ministries-container">
+        <a href="ministries.php" class="ministries">Ministries</a>
+        <div class="ministries-dropdown" role="menu" aria-hidden="true">
+            <a class="ministries-option" href="ministries.php#sunday-teachers">Sunday Teachers</a>
+            <a class="ministries-option" href="ministries.php#ushers">Ushers</a>
+            <a class="ministries-option" href="ministries.php#cleaners">Cleaners</a>
+            <a class="ministries-option" href="ministries.php#sound-technical">Sound and Technical</a>
+            <a class="ministries-option" href="ministries.php#broadcast">Broadcast</a>
+            <a class="ministries-option" href="ministries.php#photographers">Photographers</a>
+            <a class="ministries-option" href="ministries.php#musicians">Musicians</a>
+            <a class="ministries-option" href="ministries.php#tambourine-dancers">Tambourine Dancers</a>
+        </div>
+    </div>
+    <div class="departments-container">
+        <a href="departments.php" class="departments">Departments</a>
+        <div class="departments-dropdown" role="menu" aria-hidden="true">
+            <a class="departments-option" href="departments.php#mens">Men's Department</a>
+            <a class="departments-option" href="departments.php#womens">Women's Department</a>
+            <a class="departments-option" href="departments.php#young-adults">Young Adults</a>
+            <a class="departments-option" href="departments.php#young-ignite">Young Ignite</a>
+            <a class="departments-option" href="departments.php#young-families">Young Families</a>
+            <a class="departments-option" href="departments.php#kids-church">Kids' Church</a>
+        </div>
+    </div>
+    <div class="programs-container">
+        <a href="programs.php" class="programs">Programs</a>
+        <div class="programs-dropdown" role="menu" aria-hidden="true">
+            <a class="programs-option" href="programs.php#sunday-service">Sunday Service</a>
+            <a class="programs-option" href="programs.php#holy-ghost-night">Holy Ghost Night</a>
+            <a class="programs-option" href="programs.php#overnight-prayer">Overnight Prayer</a>
+            <a class="programs-option" href="programs.php#water-baptism">Water Baptism</a>
+            <a class="programs-option" href="programs.php#feeding-program">Feeding Program</a>
+        </div>
+    </div>
     <a href="life-groups.php" class="life-groups">Life Groups</a>
     <a href="location.php" class="location">Location</a>
     <a href="online.php" class="online">Online</a>
