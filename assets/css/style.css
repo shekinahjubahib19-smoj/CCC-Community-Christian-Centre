@@ -1,49 +1,76 @@
 /* ==========================
    Reset & Base
    ========================== */
-html, body {
-	margin: 0;
-	padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 /* Page transition (fade) */
-body.page-transition { transition: opacity 350ms ease-in-out; }
-body.page-hidden { opacity: 0; }
+body.page-transition {
+  transition: opacity 350ms ease-in-out;
+}
+body.page-hidden {
+  opacity: 0;
+}
 
 /* Utility fallback in case Tailwind is not loaded */
-.uppercase { text-transform: uppercase; }
+.uppercase {
+  text-transform: uppercase;
+}
 
 /* ==========================
    Layout helpers
    ========================== */
-main { padding-top: 50px; /* reserve space for fixed header */ }
+main {
+  padding-top: 50px; /* reserve space for fixed header */
+}
 
 /* ==========================
    Hero / Intro section
    ========================== */
 .hero-section {
-	position: relative;
-	overflow: hidden;
-	margin-top: -50px; /* bring hero under the fixed header */
-	padding-top: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: -50px; /* bring hero under the fixed header */
+  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero-section::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	background: rgba(0,0,0,0.35);
-	pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
 }
-.hero-inner { position: relative; z-index: 2; transform: translateY(-15vh); }
-@media (max-width: 640px) { .hero-inner { transform: translateY(-4vh); } }
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  transform: translateY(-15vh);
+}
+@media (max-width: 640px) {
+  .hero-inner {
+    transform: translateY(-4vh);
+  }
+}
 
 /* Hero title specific selectors (scoped to #hero) */
-#hero .hero-pretitle, #hero .hero-title { color: #f8f9fa; line-height: 1.02; text-align: center; margin: 0 auto; }
-#hero .hero-pretitle { font-size: clamp(0.9rem, 3.5vw, 2.2rem); }
-#hero .hero-title { font-size: clamp(2.5rem, 4vw, 7rem); }
+#hero .hero-pretitle,
+#hero .hero-title {
+  color: #f8f9fa;
+  line-height: 1.02;
+  text-align: center;
+  margin: 0 auto;
+}
+#hero .hero-pretitle {
+  font-size: clamp(0.9rem, 3.5vw, 2.2rem);
+}
+#hero .hero-title {
+  font-size: clamp(2.5rem, 4vw, 7rem);
+}
 
 /* ==========================
    Hero chips (call-to-actions)
@@ -51,50 +78,57 @@ main { padding-top: 50px; /* reserve space for fixed header */ }
    - Use `hero-chip` for each button/anchor
    ========================== */
 .hero-chips {
-	position: absolute;
-	left: 50%;
-	top: 200%;
-	transform: translateX(-50%);
-	display: flex;
-	gap: 2rem;
-	align-items: center;
-	z-index: 3;
+  position: absolute;
+  left: 50%;
+  top: 200%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  z-index: 3;
 }
 
 .hero-chips .hero-chip {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	text-transform: uppercase;
-	color: #fff;
-	border: 1px solid rgba(255,255,255,0.95);
-	background: rgba(255,255,255,0.06);
-	-webkit-backdrop-filter: blur(6px);
-	backdrop-filter: blur(6px);
-	padding: 0.85rem 2rem;
-	border-radius: 2px;
-	white-space: nowrap;
-	min-width: 320px;
-	text-align: center;
-	font-size: 1.25rem;
-	cursor: pointer;
-	transition: background-color 180ms ease, color 180ms ease, transform 120ms ease;
-	box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-	text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.06);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  padding: 0.85rem 2rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  min-width: 320px;
+  text-align: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 120ms ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
 }
 
 .hero-chips .hero-chip:hover {
-	background: #fff;
-	color: #111827;
+  background: #fff;
+  color: #111827;
 }
 
 @media (max-width: 640px) {
-	.hero-chips {
-		flex-direction: column;
-		top: 96%;
-		gap: 0.6rem;
-	}
-	.hero-chips .hero-chip { min-width: auto; width: auto; padding: 0.6rem 1.2rem; }
+  .hero-chips {
+    flex-direction: column;
+    top: 96%;
+    gap: 0.6rem;
+  }
+  .hero-chips .hero-chip {
+    min-width: auto;
+    width: auto;
+    padding: 0.6rem 1.2rem;
+  }
 }
 
 /* ==========================
@@ -102,127 +136,269 @@ main { padding-top: 50px; /* reserve space for fixed header */ }
    - layered background: left darker -> middle fade -> right lighter
    ========================== */
 .testimonial-section {
-	position: relative;
-	color: #fff;
+  position: relative;
+  color: #fff;
 }
 
 /* testimonial image/gradient is applied inline on the #testimonial element to preserve original design */
 
 /* overlay gradient placed above the image so the image remains visible */
 .testimonial-section::before {
-	content: "";
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	background: linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.35) 35%, rgba(0,0,0,0.08) 60%, rgba(255,255,255,0.04) 100%);
-	z-index: 1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.35) 35%,
+    rgba(0, 0, 0, 0.08) 60%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  z-index: 1;
 }
 
-.testimonial-inner { position: relative; z-index: 2; }
-.testimonial-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 2rem;
-	align-items: center;
+.testimonial-inner {
+  position: relative;
+  z-index: 2;
 }
-.testimonial-text { text-align: left; padding: 2rem; }
-.testimonial-paragraph { color: #e5e7eb; font-size: 1.125rem; line-height: 1.6; margin: 0; }
-.testimonial-media { min-height: 220px; border-radius: 8px; /* placeholder for image or media */ }
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.testimonial-text {
+  text-align: left;
+  padding: 2rem;
+}
+.testimonial-paragraph {
+  color: #e5e7eb;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.testimonial-media {
+  min-height: 220px;
+  border-radius: 8px; /* placeholder for image or media */
+}
 
 @media (max-width: 900px) {
-	.testimonial-grid { grid-template-columns: 1fr; }
-	.testimonial-text { padding: 1.25rem; }
-	.testimonial-media { display: none; }
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial-text {
+    padding: 1.25rem;
+  }
+  .testimonial-media {
+    display: none;
+  }
 }
 
 /* ==========================
    Navigation / Header
    ========================== */
-nav { width: 100%; margin: 0; padding: 0; }
+nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 .parent {
-	display: flex;
-	height: 50px;
-	background: transparent;
-	width: 100%;
-	align-items: center;
-	padding: 0 12px;
-	box-sizing: border-box;
-	justify-content: flex-end;
-	gap: 30px;
-	transition: background-color 200ms ease, box-shadow 200ms ease;
-	position: fixed;
-	top: 0; left: 0; right: 0; z-index: 9999;
+  display: flex;
+  height: 50px;
+  background: transparent;
+  width: 100%;
+  align-items: center;
+  padding: 0 12px;
+  box-sizing: border-box;
+  justify-content: flex-end;
+  gap: 30px;
+  transition:
+    background-color 200ms ease,
+    box-shadow 200ms ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 }
-.parent.scrolled { background-color: #000; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
-
-.parent > a, .parent > div {
-	color: #fff;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	height: 100%;
-	width: auto;
-	justify-content: center;
-	white-space: nowrap;
-	font-weight: 700;
-	font-size: 16px;
-	transition: color 150ms ease-in-out;
-	cursor: pointer;
-	text-decoration: none;
+.parent.scrolled {
+  background-color: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-.parent > a:hover, .parent > div:hover { color: #9ca3af; }
-.parent > a:first-child, .parent > div:first-child { padding-left: 0; }
-.parent > a:last-child, .parent > div:last-child { padding-right: 10px; }
 
-/* ==========================
-   Footer
-   ========================== */
+.parent > a,
+.parent > div {
+  color: #fff;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  justify-content: center;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 16px;
+  transition: color 150ms ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+}
+.parent > a:hover,
+.parent > div:hover {
+  color: #9ca3af;
+}
+.parent > a:first-child,
+.parent > div:first-child {
+  padding-left: 0;
+}
+.parent > a:last-child,
+.parent > div:last-child {
+  padding-right: 10px;
+}
+
 .site-footer {
-	background: rgba(65, 64, 64, 0.85);
-	color: #fff;
-	padding: 1rem 1rem; /* reduced vertical padding to make footer shorter */
-	text-align: center;
+  background: transparent;
+  color: #fff;
+  padding: 1rem 1rem;
+  text-align: center;
+  position: relative;
+  margin-top: -3rem; /* float up so footer visually sits at bottom of last section */
+  z-index: 30;
 }
-.site-footer .footer-inner { max-width: 1100px; margin: 0 auto; }
-.footer-tagline { font-weight: 700; font-size: 1.125rem; margin: 0 0 0.2rem; }
-.footer-thanks { margin: 0 0 0.5rem; color: #d1d5db; }
-.footer-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* Force any wrapper or inherited rule to be transparent so underlying section shows through */
+#footer-id,
+.footer,
+.site-footer,
+.site-footer .footer-inner {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* When footer is moved into the last section, make it float at the section's bottom */
+.floating-footer {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 30;
+}
+
+/* Ensure footer content doesn't overlap important section content on small screens */
+@media (max-width: 640px) {
+  .floating-footer { padding: 0.75rem 1rem; }
+}
+/* add spacing to the previous full-height sections so content isn't hidden behind footer */
+.testimonial-section,
+.about-section,
+.hero-section {
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 1024px) {
+  .site-footer { margin-top: -4rem; }
+  .testimonial-section,
+  .about-section,
+  .hero-section { padding-bottom: 6rem; }
+}
+@media (max-width: 640px) {
+  .site-footer { margin-top: -1.5rem; }
+  .testimonial-section,
+  .about-section,
+  .hero-section { padding-bottom: 3rem; }
+}
+.site-footer .footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.footer-tagline {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: 0 0 0.2rem;
+}
+.footer-thanks {
+  margin: 0 0 0.5rem;
+  color: #d1d5db;
+}
+.footer-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .footer-action {
-	display: inline-block;
-	padding: 0.6rem 1rem;
-	border: 1px solid rgba(255,255,255,0.9);
-	color: #fff;
-	text-decoration: none;
-	background: rgba(255,255,255,0.03);
-	border-radius: 6px;
-	transition: background-color 150ms ease, color 150ms ease, transform 120ms ease;
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    transform 120ms ease;
 }
-.footer-action:hover { background: #fff; color: #111827; transform: translateY(-2px); }
+.footer-action:hover {
+  background: #fff;
+  color: #111827;
+  transform: translateY(-2px);
+}
 
 @media (max-width: 640px) {
-	.footer-tagline { font-size: 1rem; }
-	.footer-actions { gap: 0.6rem; }
-	.footer-action { padding: 0.5rem 0.9rem; }
+  .footer-tagline {
+    font-size: 1rem;
+  }
+  .footer-actions {
+    gap: 0.6rem;
+  }
+  .footer-action {
+    padding: 0.5rem 0.9rem;
+  }
 }
 
 /* Footer layout: logo + tagline + actions in one centered line */
 .site-footer .footer-inner {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 1rem;
-	flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
-.footer-logo { display: flex; align-items: center; justify-content: center; }
-.footer-logo-img { height: 36px; width: auto; display: block; object-fit: contain; }
-.footer-tagline { margin: 0; font-weight: 700; }
-.footer-copy { margin-top: 0.5rem; font-size: 0.7rem; color: #d1d5db; }
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+.footer-tagline {
+  margin: 0;
+  font-weight: 700;
+}
+.footer-copy {
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: #d1d5db;
+}
 
 @media (max-width: 640px) {
-	.site-footer .footer-inner { gap: 0.5rem; }
-	.footer-logo-img { height: 28px; }
-	.footer-copy { margin-top: 0.4rem; font-size: 0.1rem; }
+  .site-footer .footer-inner {
+    gap: 0.5rem;
+  }
+  .footer-logo-img {
+    height: 28px;
+  }
+  .footer-copy {
+    margin-top: 0.4rem;
+    font-size: 0.1rem;
+  }
 }
 
 /* hero and about section visuals are applied inline on their elements to preserve the original design; selectors are retained for traceability only */
@@ -231,39 +407,74 @@ nav { width: 100%; margin: 0; padding: 0; }
    Header logo sizing & layout
    - keep logo small and on the left
    ========================== */
-.parent .logo { margin-right: auto; display: flex; align-items: center; height: 100%; padding: 0 8px; }
-.parent .logo-img, .logo-img { height: 36px; width: auto; display: block; object-fit: contain; }
+.parent .logo {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px;
+}
+.parent .logo-img,
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
 
 @media (max-width: 640px) {
-	.parent .logo-img, .logo-img { height: 28px; }
+  .parent .logo-img,
+  .logo-img {
+    height: 28px;
+  }
 }
 
 /* Utility: content-padding for sections that need horizontal spacing */
-.content-padding { padding-left: 1rem; padding-right: 1rem; }
+.content-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 @media (min-width: 640px) {
-	.content-padding { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .content-padding {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 @media (min-width: 1024px) {
-	.content-padding { padding-left: 2rem; padding-right: 2rem; }
+  .content-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 /* Narrow content block for readable paragraph width */
-.narrow { width: 100%; /* neutral: no forced max-width to avoid changing layout */ }
-.narrow p { text-align: left; }
+.narrow {
+  width: 100%; /* neutral: no forced max-width to avoid changing layout */
+}
+.narrow p {
+  text-align: left;
+}
 
 /* ==========================
    About section tweaks
    - add padding to the about container
    - make paragraph match testimonial paragraph style (but keep dark color)
    ========================== */
-.about-content { padding: 2rem 1rem; max-width: 60ch; margin-left: auto; margin-right: auto; }
+.about-content {
+  padding: 2rem 1rem;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media (min-width: 640px) {
-	.about-content { padding: 3rem 2rem; }
+  .about-content {
+    padding: 3rem 2rem;
+  }
 }
 .about-text {
-	text-align: justify;
-	font-size: 1.125rem; /* match testimonial-paragraph */
-	line-height: 1.6;
-	margin: 0;
-	color: #374151; /* keep dark text on white background */
+  text-align: justify;
+  font-size: 1.125rem; /* match testimonial-paragraph */
+  line-height: 1.6;
+  margin: 0;
+  color: #374151; /* keep dark text on white background */
 }
