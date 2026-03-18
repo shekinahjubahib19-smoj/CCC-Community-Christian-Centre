@@ -289,7 +289,9 @@ nav {
 
 /* Ensure footer content doesn't overlap important section content on small screens */
 @media (max-width: 640px) {
-  .floating-footer { padding: 0.75rem 1rem; }
+  .floating-footer {
+    padding: 0.75rem 1rem;
+  }
 }
 /* add spacing to the previous full-height sections so content isn't hidden behind footer */
 .testimonial-section,
@@ -298,16 +300,24 @@ nav {
   padding-bottom: 4.5rem;
 }
 @media (min-width: 1024px) {
-  .site-footer { margin-top: -4rem; }
+  .site-footer {
+    margin-top: -4rem;
+  }
   .testimonial-section,
   .about-section,
-  .hero-section { padding-bottom: 6rem; }
+  .hero-section {
+    padding-bottom: 6rem;
+  }
 }
 @media (max-width: 640px) {
-  .site-footer { margin-top: -1.5rem; }
+  .site-footer {
+    margin-top: -1.5rem;
+  }
   .testimonial-section,
   .about-section,
-  .hero-section { padding-bottom: 3rem; }
+  .hero-section {
+    padding-bottom: 3rem;
+  }
 }
 .site-footer .footer-inner {
   max-width: 1100px;
